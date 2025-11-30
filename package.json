@@ -1,6 +1,6 @@
 {
   "name": "com.riskofthunder.ror2thunderkit",
-  "version": "1.0.0",
+  "version": "10.0.0",
   "displayName": "RoR2-ThunderKit",
   "description": "ThunderKit fork catered specifically for Risk of Rain 2",
   "unity": "2021.3",
