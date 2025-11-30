@@ -1,9 +1,9 @@
 {
-  "name": "com.passivepicasso.thunderkit",
-  "version": "9.1.4",
-  "displayName": "ThunderKit",
-  "description": "Unity Game Mod Development extension with build, packaging and analysis tools",
-  "unity": "2018.4",
+  "name": "com.riskofthunder.ror2thunderkit",
+  "version": "1.0.0",
+  "displayName": "RoR2-ThunderKit",
+  "description": "ThunderKit fork catered specifically for Risk of Rain 2",
+  "unity": "2021.3",
   "release": "12f1",
   "author": {
     "name": "ThunderKit",
