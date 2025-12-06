@@ -45,10 +45,10 @@ namespace ThunderKit.Core.Config
 
             var gamePlayer = Path.Combine(gamePath, $"{gameName}.exe");
 
-            var monoString = settings.Is64Bit ? "win64_development_mono" : "win32_development_mono";
+            var monoString = settings.Is64Bit ? "win64_player_development_mono" : "win32_player_development_mono";
             var crashHandlerFile = settings.Is64Bit ? "UnityCrashHandler64.exe" : "UnityCrashHandler32.exe";
-            var playerPdbFile = settings.Is64Bit ? "UnityPlayer_Win64_development_mono_x64.pdb" : "UnityPlayer_Win32_development_mono_x86.pdb";
-            var playerReleasePdb = settings.Is64Bit ? "WindowsPlayer_Release_mono_x64.pdb" : "WindowsPlayer_Release_mono_x86.pdb";
+            var playerPdbFile = settings.Is64Bit ? "UnityPlayer_Win64_player_development_mono_x64.pdb" : "UnityPlayer_Win32_player_development_mono_x86.pdb";
+            var playerReleasePdb = settings.Is64Bit ? "WindowsPlayer_player_Release_mono_x64.pdb" : "WindowsPlayer_player_Release_mono_x86.pdb";
 
             var bitVersionPath = Combine(windowsStandalonePath, "Variations", monoString);
             var monoBleedingEdgePath = Path.Combine(bitVersionPath, "MonoBleedingEdge");
@@ -58,7 +58,6 @@ namespace ThunderKit.Core.Config
 
             var crashHandler = GetSwapPair(bitVersionPath, gamePath, crashHandlerFile);
             var player = GetSwapPair(bitVersionPath, gamePath, "UnityPlayer.dll");
-            var playerLib = GetSwapPair(bitVersionPath, gamePath, "UnityPlayer.dll.lib");
             var playerPdb = GetSwapPair(bitVersionPath, gamePath, playerPdbFile);
             var releasePdb = GetSwapPair(bitVersionPath, gamePath, playerReleasePdb);
             var winPix = GetSwapPair(bitVersionPath, gamePath, "WinPixEventRuntime.dll");
@@ -81,7 +80,6 @@ This action cannot be undone, continue?",
                     Overwrite(new SwapPair { newFile = winPlayer, originalFile = gamePlayer });
                     Overwrite(crashHandler);
                     Overwrite(player);
-                    Overwrite(playerLib);
                     Overwrite(playerPdb);
                     Overwrite(releasePdb);
                     if (File.Exists(winPix.newFile))
